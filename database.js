@@ -3,10 +3,11 @@ import dotenv from "dotenv"
 dotenv.config()
 
 const pool = mysql.createPool({
-    host: process.env.MYSQL_HOST, 
-    user: process.env.MYSQL_USER, 
-    password: process.env.MYSQL_PASSWORD, 
-    database: process.env.MYSQL_DATABASE
+    host: "containers-us-west-77.railway.app", 
+    user: "root", 
+    password: "74ulhU85blzfJESAXy61", 
+    database: "railway", 
+    port: "7090"
 }).promise()
 
 export async function getMoods () {
