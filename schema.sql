@@ -8,4 +8,5 @@ CREATE TABLE `moods` (
   `mood` VARCHAR(255) NOT NULL,
   `rating` INT NOT NULL default 0,
   `date` TIMESTAMP NOT NULL default CURRENT_TIMESTAMP());
+
   

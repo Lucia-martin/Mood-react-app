@@ -33,7 +33,7 @@ app.post('/api/moods', async (req, res) => {
   let mood= req.body.mood;
   let rating= req.body.rating;
   const newMood = await createMood(mood, rating)
-  res.send(newMood)
+  res.status(201).send(newMood)
 })
 
 //updates a new mood
