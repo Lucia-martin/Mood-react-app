@@ -11,8 +11,8 @@ const pool = mysql.createPool({
 }).promise()
 
 export async function getMoods () {
-    const [rows] = await pool.query("SELECT * FROM moods")
-    return rows;
+    const [moods] = await pool.query("SELECT * FROM moods")
+    return moods;
 }
 
 //requesting a single mood
@@ -36,8 +36,8 @@ export async function deleteMood (id) {
     return moods
 }
 
-export async function updateMood (id, newMood, newRating) {
-    await pool.query(`UPDATE moods SET mood=?, rating=? WHERE id=?`, [newMood, newRating, id])
+export async function updateMood (id, newMood, newRating, newDate) {
+    await pool.query(`UPDATE moods SET mood=?, rating=?, date=? WHERE id=?`, [newMood, newRating, newDate, id])
     let moods = await getMoods()
     return moods
 }
