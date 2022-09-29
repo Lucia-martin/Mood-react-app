@@ -7,21 +7,20 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static("dist"))
 
-
-let sampleMoods = [
-  {
-    id: 1,
-    mood: "i can't",
-    rating: 4,
-    date: new Date().toLocaleString('en-US'),
-  },
-  {
-    id: 2,
-    mood: 'not good i would say',
-    rating: 3,
-    date: new Date().toLocaleString('en-US'),
-  },
-]
+// let sampleMoods = [
+//   {
+//     id: 1,
+//     mood: "i can't",
+//     rating: 4,
+//     date: new Date().toLocaleString('en-US'),
+//   },
+//   {
+//     id: 2,
+//     mood: 'not good i would say',
+//     rating: 3,
+//     date: new Date().toLocaleString('en-US'),
+//   },
+// ]
 
 //returns all moods
 app.get('/api/moods', async (req, res) => {
