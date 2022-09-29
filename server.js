@@ -46,7 +46,12 @@ app.put('/api/moods/:id', async (req, res) => {
 app.delete('/api/moods/:id', async (req, res) => {
   const id = req.params.id
   const moods = await deleteMood(id)
-  res.send(moods)
+  let newMoods = moods.map(mood => {
+    return {...mood, date: mood.date.toLocaleString("en-US")}
+  })
+  console.log(newMoods)
+  res.send(newMoods)
+  // res.send(moods)
 })
 
 app.use((err, req, res, next) => {
